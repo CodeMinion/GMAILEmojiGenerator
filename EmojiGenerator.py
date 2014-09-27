@@ -142,7 +142,19 @@ def paintTileWithColor(color, imgDestPixel, imgSize, tileInfo):
 			imgDestPixel[x,y] = color
 
 
-
+###########################################################################
+# Function to group all colors that are similar into a common color. 
+# It creates a map colors to replacement colors for all colors that are 
+# very similar to the most prominent color of that shade in the image.
+#
+# @param colorDict - Dictionary containing all the colors mapped to their
+#					 frequency in the image.
+# @param colorMinDistance - Minimum distance two color can be appart to be
+#							considered similar.
+#
+# return - Color map dictionary containing a mapping between colors to 
+#		   replacement colors.
+###########################################################################
 def clusterColors(colorDict, colorMinDistance):
 	
 	# Minimum distance colors can be appart
@@ -185,13 +197,6 @@ def getMostProminentColor(colorDict):
 	maxColorCount = 0
 	# Keep track of Most Prominent Color
 	maxColorRGB = (0,0,0)
-	
-	#print "Printing Color..."
-	#for color in colorDict:
-	#	print str(color) +"," + str(colorDict[color])
-	
-	#print "Done Printing\n"
-	#clusterColors(colorDict)	
 
 	for color in colorDict:
 		colorCount = colorDict[color]
@@ -200,8 +205,6 @@ def getMostProminentColor(colorDict):
 			maxColorRGB = color
 	
 
-	#print str(maxColorRGB) +"," + str(colorDict[maxColorRGB])
-	
 	return maxColorRGB
 
 
@@ -500,7 +503,13 @@ def pixelateImage(imgSrc, countHorizontalTiles, countVerticalTiles, colorMinDist
 	
 	
 	return imgDest;
-
+###########################################################################
+# This function loads all the emoticon IDs available from a file. 
+# 
+# @param emoticonInitPath - path to the emoticon file.
+#
+# @return - List of emoticon IDs.
+###########################################################################
 def initializeEmoticons(emoticonInitPath):
 
 	if not os.path.isfile(emoticonInitPath):
