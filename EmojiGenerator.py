@@ -514,6 +514,7 @@ def initializeEmoticons(emoticonInitPath):
 
 	if not os.path.isfile(emoticonInitPath):
 		return 
+	
 	emoticonFile = open(emoticonInitPath, 'r')
 	
 	emoticonIDList = []
@@ -528,6 +529,7 @@ def initializeEmoticons(emoticonInitPath):
 		if indexStartComment == 0:
 			continue
 		
+		# Separate the comment from the emoticon ID
 		if indexStartComment > 0:
 			line = line.partition("#")[0]
 			

@@ -1,8 +1,8 @@
 #############################################################
-# This file contains all the emoticons that will be used
+# This file contains all the emoticonIDs that will be used
 # in the generation of an image. 
 # Make sure that for every ID here their is a matching 
-# file with a file name of the form emoticonID.gif
+# file with a file name of the form <emoticonID>.gif
 #
 # File Format
 # Emoticon ID #Comment (if any)
