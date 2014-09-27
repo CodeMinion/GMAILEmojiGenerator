@@ -2,6 +2,7 @@ from PIL import Image
 import sys
 import math
 import operator
+import os.path
 from collections import OrderedDict
 
 
@@ -285,10 +286,21 @@ def generateGMailEmoticonArt(image, emoticonIDList, pixelatedInfo, tileInfo):
 	
 	return lstHtml
 
-def generateColorMapForEmoticonArt(image, pixelatedInfo, tileInfo):
+###########################################################################
+# This function maps each pixel color to a colorID. This mapping 
+# holds information on what color to user for each tile. 
+#
+# @param pixelatedImage - Image to generate the map from.
+# @param pixelatedInfo - Tuple containing the number of horizontal and 
+#						 vertical tiles in the image.
+# @param tileInfo - Tuple containing tile information (x, y, width, height)
+#
+# @return - 2D Array contaning an ID for each color in the image. 
+###########################################################################
+def generateColorMapForEmoticonArt(pixelatedImage, pixelatedInfo, tileInfo):
 	
-	imagePixels = image.load()
-	imageSize = image.size
+	imagePixels = pixelatedImage.load()
+	imageSize = pixelatedImage.size
 	
 	countHorizontalTiles = pixelatedInfo[0]
 	countVerticalTiles = pixelatedInfo[1]
@@ -333,10 +345,22 @@ def generateColorMapForEmoticonArt(image, pixelatedInfo, tileInfo):
 		#colorMapOutLst.append("\n")
 	
 	return colorMapOutLst
-	
+
+###########################################################################
+# This function uses a color map to create an image composed of emoticons.
+# Each unique color ID will be replaced by a unique emoticon in the 
+# emoticon list. 
+# 
+# @param colorID2Arr - 2D array connect 
+# @param emoticonIDList - List of emoticon IDs to replace colors for. 
+# @param pixalatedInfo - Tuple (horizontal tiles, vertical tiles) 
+# @parem tileInfo - Tuple (tileX, tileY, tileW, tileH)
+# @param emoticonInfo - Tuple (emoticonW, emoticonH, emoticonID)
+#
+# @return - Returns image built out of emoticons in the emoticon list.
+#############################################################################
 def generateEmoticonArtImage(colorID2DArr, emoticonIDList, pixelatedInfo, tileInfo, emoticonInfo):
-	
-	
+		
 	countHorizontalTiles = pixelatedInfo[0]
 	countVerticalTiles = pixelatedInfo[1]
 	
@@ -347,11 +371,13 @@ def generateEmoticonArtImage(colorID2DArr, emoticonIDList, pixelatedInfo, tileIn
 	emoticonHeight = emoticonInfo[1]
 	emoticonID = emoticonInfo[2]
 	
+	# Create a new image for the emoticon art
 	emoticonImgSize = ( emoticonWidth * countHorizontalTiles, emoticonHeight * countVerticalTiles)
 	emoticonImg = Image.new("RGB", emoticonImgSize, "white")
 	emoticonImgPixels = emoticonImg.load()
 	
-	# Generate the HTML for GMAIL
+	# Replace each unique colorID with an emoticon from the
+	# emoticon list. 
 	for tileY in xrange(0, countVerticalTiles):
 		lstRow = colorID2DArr[tileY]
 		for tileX in xrange(0, countHorizontalTiles):
@@ -364,7 +390,14 @@ def generateEmoticonArtImage(colorID2DArr, emoticonIDList, pixelatedInfo, tileIn
 		
 	return emoticonImg
 	
-
+###########################################################################
+# Helper function to draw an emoticon on an image. It will place the 
+# emoticon in the in the specified tile of the image.
+#
+# @param imageOutPixels - Access object to the pixels on the output image
+# @param tileInfo - Tuple with information on the tile (tileX, tileY,w,h)
+# @param emoticonInfo - Tuple (emoticonW, emoticonH, emoticonID)
+###########################################################################
 def drawEmoticonOnImage(imageOutPixels, tileInfo, emoticonInfo):
 
 	tileX = tileInfo[0]
@@ -385,6 +418,7 @@ def drawEmoticonOnImage(imageOutPixels, tileInfo, emoticonInfo):
 	endX = startX + emoticonWidth
 	endY = startY + emoticonHeight
 	
+	# Copy the emoticon to that tile on the screen.
 	for y in xrange(startY, endY):
 		if y - startY >= emoticonSizeActual[1]:
 			break
@@ -466,15 +500,56 @@ def pixelateImage(imgSrc, countHorizontalTiles, countVerticalTiles, colorMinDist
 	
 	
 	return imgDest;
+
+def initializeEmoticons(emoticonInitPath):
+
+	if not os.path.isfile(emoticonInitPath):
+		return 
+	emoticonFile = open(emoticonInitPath, 'r')
 	
+	emoticonIDList = []
+	
+	for line in emoticonFile:
+		line = line.strip()
+		# Ignore empty lines.
+		if not line:
+			continue
+		# Ignore comments
+		indexStartComment = line.index('#') 
+		if indexStartComment == 0:
+			continue
+		
+		if indexStartComment > 0:
+			line = line.partition("#")[0]
+			
+		emoticonIDList.append(line.strip())
+		
+	emoticonFile.close()
+	
+	return emoticonIDList
+
 def main():
 	
 	argv = sys.argv
 	
 	fileSrcPath = argv[1]
-	fileDestDir = ""
+	fileDestDir = "./outFiles/"
 	colorMinDistance = 20
 	
+	# Catch incorrect usage.
+	if len(argv) < 4:
+		print "\n"
+		print "***************************************************************************"
+		print "Tool: GMAIL Emoji Generator v0.01" 
+		print "Author: Frank Hernandez"
+		print "\nHope you enjoy using this tool, feel free to tweet me any of your" 
+		print "creations to @SourceMinion #GEGCreate\n"
+			   
+		print "Usage: python " + argv[0] +" ImagePath NumOfColumns NumOfRows Threshold(optional) \n"
+		print "***************************************************************************"
+		print "\n"
+		return
+		
 	# Number of Horizontal Tiles
 	countHorizontalTiles = 1
 	# Number of Vertical Tiles
@@ -504,7 +579,6 @@ def main():
 	# Get the pixels in the image as a 2D array
 	imagePixels = im.load()
 
-
 	# List of IDs matching the ids of emoticons in GMAIL
 	emoticonListID = [
 						"B60", #Small Stars
@@ -517,10 +591,12 @@ def main():
 						"softbank_ne_jp.B14", # Green Heart
 						"softbank_ne_jp.B15", # Yellow Heart
 						"softbank_ne_jp.B16", # Purple Heart
-						"softbank_ne_jp.B17" # Ribbon Shinning Heart
-						"softbank_ne_jp.B18" # Two Hearts
+						"softbank_ne_jp.B17", # Ribbon Shinning Heart
+						"softbank_ne_jp.B18", # Two Hearts
 						
 						]
+	
+	emoticonListID = initializeEmoticons("./emoticonsGmail/_EmoticonIDsOrder.txt")
 	
 	imgSize = im.size
 	# Calculate the width and height for the pixelated image
@@ -542,7 +618,7 @@ def main():
 	emoticonImgFinal = generateEmoticonArtImage(outColor2DArr, emoticonListID, pixelatedInfo, tileInfo, (15,15, ""))
 	
 	
-	# Open the HTML file for writing
+	# Save HTML Code For Emoticon Art
 	outFile = open(fileDestDir+"outfileHTML.txt", 'w')
 	outFile.write(''.join(outHTML));
 	outFile.close()

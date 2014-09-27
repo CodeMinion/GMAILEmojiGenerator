@@ -1,0 +1,25 @@
+#############################################################
+# This file contains all the emoticons that will be used
+# in the generation of an image. 
+# Make sure that for every ID here their is a matching 
+# file with a file name of the form emoticonID.gif
+#
+# File Format
+# Emoticon ID #Comment (if any)
+#############################################################
+
+B60 #Small Stars
+docomo_ne_jp.008 # Dark sky with moon
+ezweb_ne_jp.B10 #Heart Pink 
+B68 #Big Star 
+ezweb_ne_jp.B17 # Heart With Bow
+ezweb_ne_jp.B13 # Ligh Blue Heart
+softbank_ne_jp.B16 # Purple Heart
+softbank_ne_jp.B11 # Beating Heart
+softbank_ne_jp.B13 # Dark Blue Heart
+softbank_ne_jp.B12 # Arrow Pierced Heart
+softbank_ne_jp.B14 # Green Heart
+softbank_ne_jp.B15 # Yellow Heart
+ezweb_ne_jp.03C # Four Leaf Clover
+softbank_ne_jp.B17 # Ribbon Shinning Heart
+softbank_ne_jp.B18 # Two Hearts
