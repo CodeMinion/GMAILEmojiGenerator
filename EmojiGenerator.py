@@ -5,13 +5,20 @@ import operator
 import os.path
 from collections import OrderedDict
 
+###########################################################################
+# Emoji Generator
+# Version: 0.01
+# Author: Frank Hernandez (Code Minion)
+#
+# Script to generate Emotji/Emoticon Art for GMail using a source image.
+# Ideally the source image should be a pixelated image but the script
+# will do its best to pixelate an image before creating the art. 
+# 
+# Instructions Video: https://www.youtube.com/watch?v=Y0kGzqKlZbo
+# Creations: https://www.flickr.com/photos/codeminion/sets/72157648084003885/
+###########################################################################
 
 	
-# <img src="https://mail.google.com/mail/u/0/e/360" goomoji="360" style="margin: 0px 0.2ex; vertical-align: middle;">
-# Div in which the email text is inserted, add emoticon to it. 
-# Note: Id seems to change but the class remains the same. Label is "Message Body" 
-# <div id=":1dw" class="Am Al editable LW-avf" hidefocus="true" aria-label="Message Body" g_editable="true" role="textbox" contenteditable="true" tabindex="1" style="direction: ltr; min-height: 80px;">
-# ddf <img src="https://mail.google.com/mail/u/0/e/360" goomoji="360" style="margin: 0px 0.2ex; vertical-align: middle;">
 
 ###########################################################################
 # This function inspects the pixels in a tile and returns the most
@@ -28,16 +35,19 @@ from collections import OrderedDict
 ###########################################################################
 def inspectTile(imgPixels, imgSize, tileInfo): 
 	
-	# Used to handle dirty images
-	# usually this image will have a very low frequency 
-	# of a given color because the tile is composed 
-	# of shades of the color.
-	threshold = 50
-	
 	xPos = tileInfo[0]
 	yPos = tileInfo[1]
 	tileW = tileInfo[2]
 	tileH = tileInfo[3]
+	
+	# Used to handle dirty images
+	# usually this image will have a very low frequency 
+	# of a given color because the tile is composed 
+	# of shades of the color.
+	# Note: If out pixel image comes out blurry 
+	# then the threshold might be too high.
+	threshold = 0.30 * (tileW*tileH)
+	
 	
 	colorDict = {}
 	#avaliableColors = [(255,0,0), (0,255,0), (0,0,255), (255,255,0), (255,182,193)]
@@ -91,6 +101,7 @@ def inspectTile(imgPixels, imgSize, tileInfo):
 		outColor = color
 	else:
 		outColor = totalColor
+	#outColor = color
 		
 	return outColor
 	
@@ -442,12 +453,12 @@ def drawEmoticonOnImage(imageOutPixels, tileInfo, emoticonInfo):
 ###########################################################################
 def generateGMAILEmoticonHTMLFromID(emoticonID):
 	#return '<img src="https://mail.google.com/mail/u/0/e/'+emoticonID+'" goomoji="'+emoticonID+'" style="margin: 0px 0.2ex; vertical-align: middle;">'
-	# Produce a more compact image
-	return '<img src="https://mail.google.com/mail/u/0/e/'+emoticonID+'" goomoji="'+emoticonID+'">'
-	
 	# Nice try but, it doesn't send as it shows. 
 	#return '<img src="https://mail.google.com/mail/u/0/e/'+emoticonID+'" goomoji="'+emoticonID+'" style="width: 15px; height: 15px vertical-align: middle;">'
 
+	# Produce a more compact image
+	return '<img src="https://mail.google.com/mail/u/0/e/'+emoticonID+'" goomoji="'+emoticonID+'">'
+	
 	
 ###########################################################################
 # This function generates a pixelated image from the source image
@@ -559,7 +570,8 @@ def main():
 		print "\nHope you enjoy using this tool, feel free to tweet me any of your" 
 		print "creations to @SourceMinion #GEGCreate\n"
 			   
-		print "Usage: python " + argv[0] +" ImagePath NumOfColumns NumOfRows Threshold(optional) \n"
+		print "Usage: \npython " + argv[0] +" ImagePath NumOfColumns NumOfRows Threshold(optional) \n"
+		print "\nInstructions Video: https://www.youtube.com/watch?v=Y0kGzqKlZbo"
 		print "***************************************************************************"
 		print "\n"
 		return
@@ -592,23 +604,6 @@ def main():
 
 	# Get the pixels in the image as a 2D array
 	imagePixels = im.load()
-
-	# List of IDs matching the ids of emoticons in GMAIL
-	emoticonListID = [
-						"B60", #Small Stars
-						"B68", #Big Star 
-						"ezweb_ne_jp.B10", #Heart Pink 
-						"ezweb_ne_jp.B17", # Heart With Bow
-						"ezweb_ne_jp.03C", # Four Leaf Clover
-						"softbank_ne_jp.B11", # Beating Heart
-						"softbank_ne_jp.B12", # Arrow Pierced Heart
-						"softbank_ne_jp.B14", # Green Heart
-						"softbank_ne_jp.B15", # Yellow Heart
-						"softbank_ne_jp.B16", # Purple Heart
-						"softbank_ne_jp.B17", # Ribbon Shinning Heart
-						"softbank_ne_jp.B18", # Two Hearts
-						
-						]
 	
 	emoticonListID = initializeEmoticons("./emoticonsGmail/_EmoticonIDsOrder.txt")
 	
@@ -622,13 +617,18 @@ def main():
 	pixelatedInfo = (countHorizontalTiles, countVerticalTiles)
 	tileInfo = (0,0, tileSize[0], tileSize[1] )
 	
+	# Clean up / Pixelate the Image.
 	outImg = pixelateImage(im, countHorizontalTiles, countVerticalTiles, colorMinDistance)
+	# Generate Emoticon Art HTML for GMail. 
 	outHTML = generateGMailEmoticonArt(outImg, emoticonListID, pixelatedInfo, tileInfo)
+	
 	# Generate an emoticon color map, this will make it easier when assigning the order of the emoticon list order to 
 	# obtain the look we want.
 	#outColorMap = generateColorMapForEmoticonArt(outImg, (countHorizontalTiles, countVerticalTiles), (0,0, tileSize[0], tileSize[1] ))
+	
 	# Generate 2D array containing color ID for this image.
 	outColor2DArr = generateColorMapForEmoticonArt(outImg, pixelatedInfo, tileInfo)
+	# Generate Preview Emoticon Image
 	emoticonImgFinal = generateEmoticonArtImage(outColor2DArr, emoticonListID, pixelatedInfo, tileInfo, (15,15, ""))
 	
 	
