@@ -9,6 +9,9 @@
 #############################################################
 
 
+# Heart 
+B60 #Small Stars
+softbank_ne_jp.B17 # Ribbon Shinning Heart
 
 
 B60 #Small Stars
