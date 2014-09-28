@@ -284,7 +284,7 @@ def generateGMailEmoticonArt(image, emoticonIDList, pixelatedInfo, tileInfo):
 				emoticonMap[color] = lastEmoticonUsed
 			
 			lstHtml.append("\t"+generateGMAILEmoticonHTMLFromID(emoticonIDList[emoticonMap[color]])+"\n")
-		
+		lstHtml.append("<br>\n")
 		lstHtml.append("</div>\n")
 	
 	return lstHtml
@@ -444,6 +444,9 @@ def generateGMAILEmoticonHTMLFromID(emoticonID):
 	#return '<img src="https://mail.google.com/mail/u/0/e/'+emoticonID+'" goomoji="'+emoticonID+'" style="margin: 0px 0.2ex; vertical-align: middle;">'
 	# Produce a more compact image
 	return '<img src="https://mail.google.com/mail/u/0/e/'+emoticonID+'" goomoji="'+emoticonID+'">'
+	
+	# Nice try but, it doesn't send as it shows. 
+	#return '<img src="https://mail.google.com/mail/u/0/e/'+emoticonID+'" goomoji="'+emoticonID+'" style="width: 15px; height: 15px vertical-align: middle;">'
 
 	
 ###########################################################################
