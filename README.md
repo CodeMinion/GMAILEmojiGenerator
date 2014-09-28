@@ -1,4 +1,4 @@
-GMAILEmojiGenerator
+GMail Emoji Generator
 ===================
 
 Emoticon Art Generator for GMail. Allows the conversion of a pixelated image into Emoji Art that can be used in GMail emails. 
