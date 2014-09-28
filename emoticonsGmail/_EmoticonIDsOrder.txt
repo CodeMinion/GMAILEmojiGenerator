@@ -9,14 +9,15 @@
 #############################################################
 
 
-B60 #Small Stars
-softbank_ne_jp.B17 # Ribbon Shinning Heart
+
 
 B60 #Small Stars
 softbank_ne_jp.B1B # Dark Club
-B71 # Organge Block
-B73 # Orange Diamond
+ezweb_ne_jp.B13 # 15x14 Ligh Blue Heart
+softbank_ne_jp.B13 # Dark Blue Heart
+ezweb_ne_jp.1AE # White Ghost
 B69 # Shining Star 2
+softbank_ne_jp.B15 # Yellow Heart
 
 ezweb_ne_jp.1B3 # Dark Skull
 softbank_ne_jp.B1B # Dark Club
@@ -30,7 +31,7 @@ B11 # Beating Heart 2
 B19 # Pink Round Heart
 B58 # Bomb
 B59 # ZZZ
-B60 #Small Stars
+B60 # Small Stars
 B61 # Shining star 2
 B68 # Big Star
 B69 # Shining Star 2
@@ -46,6 +47,7 @@ ezweb_ne_jp.B10 # 15x14 Heart Pink
 ezweb_ne_jp.B13 # 15x14 Ligh Blue Heart
 ezweb_ne_jp.B17 # 15x14 Heart With Bow
 ezweb_ne_jp.03C # Four Leaf Clover
+ezweb_ne_jp.1AE # White Ghost
 softbank_ne_jp.B11 # Beating Heart
 softbank_ne_jp.B12 # Arrow Pierced Heart
 softbank_ne_jp.B13 # Dark Blue Heart
@@ -55,6 +57,16 @@ softbank_ne_jp.B17 # Ribbon Shinning Heart
 softbank_ne_jp.B18 # Two Hearts
 softbank_ne_jp.553 #Dark Footprints
 softbank_ne_jp.B16 # Purple Heart
+
+# TriForce
+#B60 #Small Stars
+#softbank_ne_jp.B1B # Dark Club
+#softbank_ne_jp.B15 # Yellow Heart
+#ezweb_ne_jp.B13 # 15x14 Ligh Blue Heart
+
+# Heart 
+#B60 #Small Stars
+#softbank_ne_jp.B17 # Ribbon Shinning Heart
 
 # Star
 #B60 #Small Stars

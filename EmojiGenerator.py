@@ -595,6 +595,8 @@ def main():
 	
 	# Open Source Image
 	im = Image.open(fileSrcPath)
+	im = im.convert("RGB")
+	
 	
 	# Make output copy.
 	outImg = im.copy();
