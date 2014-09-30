@@ -612,8 +612,8 @@ def main():
 	imgSize = im.size
 	# Calculate the width and height for the pixelated image
 	tileSize = (
-				imgSize[0] / countHorizontalTiles,
-				imgSize[1] / countVerticalTiles
+				int(round(float(imgSize[0]) / countHorizontalTiles)),
+				int(round(float(imgSize[1]) / countVerticalTiles))
 				)
 	
 	pixelatedInfo = (countHorizontalTiles, countVerticalTiles)

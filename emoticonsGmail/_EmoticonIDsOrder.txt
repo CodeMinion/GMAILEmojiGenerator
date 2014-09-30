@@ -8,20 +8,40 @@
 # Emoticon ID #Comment (if any)
 #############################################################
 
-
-# Heart 
+# Kiyby Dream
 B60 #Small Stars
+softbank_ne_jp.B1B # Dark Club
+ezweb_ne_jp.B10 #Heart Pink 
+B68 #Big Star 
+ezweb_ne_jp.B17 # Heart With Bow
+ezweb_ne_jp.B13 # Ligh Blue Heart
+softbank_ne_jp.B16 # Purple Heart
+softbank_ne_jp.B11 # Beating Heart
+softbank_ne_jp.B13 # Dark Blue Heart
+
+softbank_ne_jp.B1B # Dark Club
+ezweb_ne_jp.1AE # White Ghost
+softbank_ne_jp.B13 # Dark Blue Heart
+ezweb_ne_jp.B13 # 15x14 Light Blue Heart
+B70 # Green Block
+softbank_ne_jp.B14 # Green Heart
+
+softbank_ne_jp.B15 # Yellow Heart
 softbank_ne_jp.B17 # Ribbon Shinning Heart
+softbank_ne_jp.B15 # Yellow Heart
+B71 # Orange Block
+softbank_ne_jp.B14 # Green Heart
 
 
 B60 #Small Stars
 softbank_ne_jp.B1B # Dark Club
-ezweb_ne_jp.B13 # 15x14 Ligh Blue Heart
+ezweb_ne_jp.B13 # 15x14 Light Blue Heart
 softbank_ne_jp.B13 # Dark Blue Heart
 ezweb_ne_jp.1AE # White Ghost
 B69 # Shining Star 2
 softbank_ne_jp.B15 # Yellow Heart
 
+# Palette
 ezweb_ne_jp.1B3 # Dark Skull
 softbank_ne_jp.B1B # Dark Club
 ezweb_ne_jp.515 # Night Fireworks
@@ -39,15 +59,16 @@ B61 # Shining star 2
 B68 # Big Star
 B69 # Shining Star 2
 B70 # Green Block
-B71 # Organge Block
+B71 # Orange Block
 B73 # Orange Diamond 
 B74 # Purple Diamond
 B82 # 15x14 Key
+B0C # Red Heart 
 
 docomo_ne_jp.008 # 12x12 Dark sky with moon
 gtalk.03C # 14x14 Big Clover 
 ezweb_ne_jp.B10 # 15x14 Heart Pink 
-ezweb_ne_jp.B13 # 15x14 Ligh Blue Heart
+ezweb_ne_jp.B13 # 15x14 Light Blue Heart
 ezweb_ne_jp.B17 # 15x14 Heart With Bow
 ezweb_ne_jp.03C # Four Leaf Clover
 ezweb_ne_jp.1AE # White Ghost
@@ -58,8 +79,59 @@ softbank_ne_jp.B14 # Green Heart
 softbank_ne_jp.B15 # Yellow Heart
 softbank_ne_jp.B17 # Ribbon Shinning Heart
 softbank_ne_jp.B18 # Two Hearts
-softbank_ne_jp.553 #Dark Footprints
+softbank_ne_jp.553 # Dark Footprints
 softbank_ne_jp.B16 # Purple Heart
+
+
+# Mario NES 13x16
+#B60 #Small Stars
+#softbank_ne_jp.B15 # Yellow Heart
+#B0C # Red Heart 
+#B71 # Orange Block
+
+# Mario Icon 60x30
+#B60 #Small Stars
+#softbank_ne_jp.B1B # Dark Club
+#ezweb_ne_jp.1AE # White Ghost
+#softbank_ne_jp.B13 # Dark Blue Heart
+#B71 # Orange Block
+#ezweb_ne_jp.B13 # 15x14 Light Blue Heart
+#B0C # Red Heart 
+#B70 # Green Block
+#softbank_ne_jp.B14 # Green Heart
+
+
+# Hello Kity Duck 30x46
+#B60 #Small Stars
+#softbank_ne_jp.B1B # Dark Club
+#softbank_ne_jp.B15 # Yellow Heart
+#B71 # Organge Block
+
+# Hello Kity Strawberry 38x49
+#B60 #Small Stars
+#softbank_ne_jp.B14 # Green Heart
+#softbank_ne_jp.B1B # Dark Club
+#B0C # Red Heart 
+#softbank_ne_jp.B15 # Yellow Heart
+
+# Hello Kity Laioncloth 29x35
+#softbank_ne_jp.B17 # Ribbon Shinning Heart
+#B60 #Small Stars
+#softbank_ne_jp.B11 # Beating Heart
+#softbank_ne_jp.B15 # Yellow Heart
+#softbank_ne_jp.B15 # Yellow Heart
+#B71 # Organge Block
+
+
+# Hello Kity Ladybug 41x61
+#B60 #Small Stars
+#softbank_ne_jp.B17 # Ribbon Shinning Heart
+#softbank_ne_jp.B11 # Beating Heart
+
+# Hello Kity Glasses 34x39
+#B60 #Small Stars
+#softbank_ne_jp.B17 # Ribbon Shinning Heart
+#softbank_ne_jp.B11 # Beating Heart
 
 # TriForce
 #B60 #Small Stars
@@ -90,20 +162,10 @@ softbank_ne_jp.B16 # Purple Heart
 #B70 # Green Block
 
 # Mystery Box
-B60 #Small Stars
-softbank_ne_jp.B1B # Dark Club
-B71 # Organge Block
-B73 # Orange Diamond
-B69 # Shining Star 2
-
-
-# Kiyby Dream
 #B60 #Small Stars
-#docomo_ne_jp.008 # Dark sky with moon
-#ezweb_ne_jp.B10 #Heart Pink 
-#B68 #Big Star 
-#ezweb_ne_jp.B17 # Heart With Bow
-#ezweb_ne_jp.B13 # Ligh Blue Heart
-#softbank_ne_jp.B16 # Purple Heart
-#softbank_ne_jp.B11 # Beating Heart
-#softbank_ne_jp.B13 # Dark Blue Heart
+#softbank_ne_jp.B1B # Dark Club
+#B71 # Organge Block
+#B73 # Orange Diamond
+#B69 # Shining Star 2
+
+
