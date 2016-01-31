@@ -422,8 +422,17 @@ def drawEmoticonOnImage(imageOutPixels, tileInfo, emoticonInfo):
 	emoticonID = emoticonInfo[2]
 	
 	# Open Emoticon Image
-	emoticonImg = Image.open("./emoticonsGmail/"+emoticonID+".gif")
+	try:
+		emoticonImg = Image.open("./emoticonsGmail/"+emoticonID+".gif")
+	except IOError as e:
+		emoticonImg = None
+		
+	# If it did not find it try to find a png.
+	if emoticonImg is None:
+		emoticonImg = Image.open("./emoticonsGmail/"+emoticonID+".png")
+		
 	emoticonImg = emoticonImg.convert("RGB")
+	#emoticonImg = emoticonImg.resize((24,24), Image.ANTIALIAS)
 	emoticonImgPixels = emoticonImg.load()
 	emoticonSizeActual = emoticonImg.size
 	
@@ -456,8 +465,21 @@ def generateGMAILEmoticonHTMLFromID(emoticonID):
 	# Nice try but, it doesn't send as it shows. 
 	#return '<img src="https://mail.google.com/mail/u/0/e/'+emoticonID+'" goomoji="'+emoticonID+'" style="width: 15px; height: 15px vertical-align: middle;">'
 
+	# Use for newer emoji, 
+	if isIphoneEmoji(emoticonID):
+		return '<img src="https://mail.google.com/mail/e/'+emoticonID+'" goomoji="'+emoticonID+'" style="vertical-align:middle;max-height:24px;max-width:24px">'
+	
 	# Produce a more compact image
-	return '<img src="https://mail.google.com/mail/u/0/e/'+emoticonID+'" goomoji="'+emoticonID+'">'
+	return '<img src="https://mail.google.com/mail/u/0/e/'+emoticonID+'" goomoji="'+emoticonID+'" >'
+	
+#############################################################################
+# Helper method to detect if emoji is part of new iPhone emoji or old Gmail 
+# emoji. 
+#############################################################################
+def isIphoneEmoji(emoticonID):
+	iPhoneEmoji = "1f" in emoticonID
+	
+	return iPhoneEmoji
 	
 	
 ###########################################################################

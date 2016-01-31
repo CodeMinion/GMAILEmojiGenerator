@@ -6,16 +6,58 @@
 #
 # File Format
 # Emoticon ID #Comment (if any)
+#
+# Note: iPhone emojis get expanded on send, so any image
+# including iPhone emojis must be composed of iPhone emojis entirely
+# or risk losing its shape.
+#
+# Note: Addresses
+# https://mail.google.com/mail/e/1f400
+# https://mail.google.com/mail/u/0/e/B60
 #############################################################
 
-# Kiyby Dream
+# Rose_1.gif 27 x 45 
+B60 # Small Stars
+B82 # 15x14 Key
+ezweb_ne_jp.B10 # 15x14 Heart Pink 
+gtalk.03C # 14x14 Big Clover 
+softbank_ne_jp.B17 # Ribbon Shinning Heart
+ezweb_ne_jp.1AE # White Ghost
+B0C # Red Heart 
+
+
+# Rose_1.gif 27 x 45 
+1f320 # Shooting Stars iPhone Emoji.
+1f511 # Key iPhone Emoji
+1f496 # Stary Heart iPhone Emoji (Pink)
+1f422 # Turtle iPhone Emoji (Green)
+softbank_ne_jp.B17 # Ribbon Shinning Heart
+ezweb_ne_jp.1AE # White Ghost
+B0C # Red Heart 
+
+
+softbank_ne_jp.B12 # Arrow Pierced Heart
+ezweb_ne_jp.B10 # 15x14 Heart Pink 
+B11 # Beating Heart 2
+softbank_ne_jp.B0C # Pink Heart
+softbank_ne_jp.B16 # Purple Heart
+ezweb_ne_jp.B17 # Heart With Bow
+
+
+
+
+softbank_ne_jp.B0C # Pink Heart
 B60 #Small Stars
-softbank_ne_jp.B1B # Dark Club
-ezweb_ne_jp.B10 #Heart Pink 
+B0C # Red Heart 
+softbank_ne_jp.B15 # Yellow Heart
+B68 # Big Star
+
+softbank_ne_jp.B13 # Dark Blue Heart
+
+
 B68 #Big Star 
 ezweb_ne_jp.B17 # Heart With Bow
-ezweb_ne_jp.B13 # Ligh Blue Heart
-softbank_ne_jp.B16 # Purple Heart
+ezweb_ne_jp.B13 # Light Blue Heart
 softbank_ne_jp.B11 # Beating Heart
 softbank_ne_jp.B13 # Dark Blue Heart
 
@@ -42,6 +84,13 @@ B69 # Shining Star 2
 softbank_ne_jp.B15 # Yellow Heart
 
 # Palette
+# iPhone Emoji
+1f320 # Shooting Stars iPhone Emoji.
+1f511 # Key iPhone Emoji
+1f496 # Stary Heart iPhone Emoji (Pink)
+1f422 # Turtle iPhone Emoji (Green)
+# iPhone Emoji End
+ 
 ezweb_ne_jp.1B3 # Dark Skull
 softbank_ne_jp.B1B # Dark Club
 ezweb_ne_jp.515 # Night Fireworks
@@ -81,6 +130,58 @@ softbank_ne_jp.B17 # Ribbon Shinning Heart
 softbank_ne_jp.B18 # Two Hearts
 softbank_ne_jp.553 # Dark Footprints
 softbank_ne_jp.B16 # Purple Heart
+softbank_ne_jp.B0C # Pink Heart
+
+# End Palette.
+
+# Mew 41x43
+#B60 #Small Stars
+#softbank_ne_jp.B1B # Dark Club
+#softbank_ne_jp.B16 # Purple Heart
+#softbank_ne_jp.B0C # Pink Heart
+#ezweb_ne_jp.B13 # Light Blue Heart
+#B68 # Big Star
+
+# Hello Kitty Heart 35x30 1
+#B60 #Small Stars
+#softbank_ne_jp.B1B # Dark Club
+#ezweb_ne_jp.B10 # 15x14 Heart Pink 
+#B60 #Small Stars
+#softbank_ne_jp.B15 # Yellow Heart
+
+# Kirby Star 24x26
+#B60 #Small Stars
+#softbank_ne_jp.B1B # Dark Club
+#ezweb_ne_jp.B10 # 15x14 Heart Pink 
+#B19 # Pink Round Heart
+#softbank_ne_jp.B15 # Yellow Heart
+#B68 # Big Star
+
+# Chrome 23x23
+#B60 #Small Stars
+#softbank_ne_jp.B1B # Dark Club
+#B0C # Red Heart 
+#softbank_ne_jp.B14 # Green Heart
+#softbank_ne_jp.B15 # Yellow Heart
+#ezweb_ne_jp.B13 # Light Blue Heart
+#softbank_ne_jp.B13 # Dark Blue Heart
+
+
+# Android 29x34
+#B60 #Small Stars
+#softbank_ne_jp.B1B # Dark Club
+#softbank_ne_jp.B14 # Green Heart
+
+# Kiyby Dream 28x29 
+#B60 #Small Stars
+#softbank_ne_jp.B1B # Dark Club
+#ezweb_ne_jp.B10 #Heart Pink 
+#B68 #Big Star 
+#ezweb_ne_jp.B17 # Heart With Bow
+#ezweb_ne_jp.B13 # Ligh Blue Heart
+#softbank_ne_jp.B16 # Purple Heart
+#softbank_ne_jp.B11 # Beating Heart
+#softbank_ne_jp.B13 # Dark Blue Heart
 
 
 # Mario NES 13x16
@@ -101,20 +202,20 @@ softbank_ne_jp.B16 # Purple Heart
 #softbank_ne_jp.B14 # Green Heart
 
 
-# Hello Kity Duck 30x46
+# Hello Kitty Duck 30x46
 #B60 #Small Stars
 #softbank_ne_jp.B1B # Dark Club
 #softbank_ne_jp.B15 # Yellow Heart
 #B71 # Organge Block
 
-# Hello Kity Strawberry 38x49
+# Hello Kitty Strawberry 38x49
 #B60 #Small Stars
 #softbank_ne_jp.B14 # Green Heart
 #softbank_ne_jp.B1B # Dark Club
 #B0C # Red Heart 
 #softbank_ne_jp.B15 # Yellow Heart
 
-# Hello Kity Laioncloth 29x35
+# Hello Kitty Laioncloth 29x35
 #softbank_ne_jp.B17 # Ribbon Shinning Heart
 #B60 #Small Stars
 #softbank_ne_jp.B11 # Beating Heart
@@ -123,15 +224,23 @@ softbank_ne_jp.B16 # Purple Heart
 #B71 # Organge Block
 
 
-# Hello Kity Ladybug 41x61
+# Hello Kitty Ladybug 41x61
 #B60 #Small Stars
 #softbank_ne_jp.B17 # Ribbon Shinning Heart
 #softbank_ne_jp.B11 # Beating Heart
 
-# Hello Kity Glasses 34x39
+# Hello Kitty Glasses 34x39
 #B60 #Small Stars
 #softbank_ne_jp.B17 # Ribbon Shinning Heart
 #softbank_ne_jp.B11 # Beating Heart
+
+# Hello Kitty Heart Envelop 35x41
+B60 #Small Stars
+softbank_ne_jp.B1B # Dark Club
+softbank_ne_jp.B0C # Pink Heart
+B60 #Small Stars
+B0C # Red Heart 
+softbank_ne_jp.B15 # Yellow Heart
 
 # TriForce
 #B60 #Small Stars
@@ -168,4 +277,16 @@ softbank_ne_jp.B16 # Purple Heart
 #B73 # Orange Diamond
 #B69 # Shining Star 2
 
+# Cupcake_2.gif 29 x 70
+#B60 #Small Stars
+#softbank_ne_jp.B17 # Ribbon Shinning Heart
+#B82 # 15x14 Key
+#ezweb_ne_jp.1AE # White Ghost
+#B0C # Red Heart 
+#softbank_ne_jp.B12 # Arrow Pierced Heart
+#ezweb_ne_jp.B10 # 15x14 Heart Pink 
+#B11 # Beating Heart 2
+#softbank_ne_jp.B0C # Pink Heart
+#softbank_ne_jp.B16 # Purple Heart
+#ezweb_ne_jp.B17 # Heart With Bow
 

@@ -47,3 +47,4 @@ TestPic
 outFiles/outEmoticonFile.png
 outFiles/outPixelFile.png
 outFiles/outfileHTML.txt
+extractedEmoji/*
