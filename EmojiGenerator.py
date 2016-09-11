@@ -579,10 +579,6 @@ def main():
 	
 	argv = sys.argv
 	
-	fileSrcPath = argv[1]
-	fileDestDir = "./outFiles/"
-	colorMinDistance = 20
-	
 	# Catch incorrect usage.
 	if len(argv) < 4:
 		print "\n"
@@ -597,6 +593,10 @@ def main():
 		print "***************************************************************************"
 		print "\n"
 		return
+	
+	fileSrcPath = argv[1]
+	fileDestDir = "./outFiles/"
+	colorMinDistance = 20
 		
 	# Number of Horizontal Tiles
 	countHorizontalTiles = 1

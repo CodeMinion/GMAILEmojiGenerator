@@ -16,6 +16,25 @@
 # https://mail.google.com/mail/u/0/e/B60
 #############################################################
 
+# Snoopy Love Fixed 30 30 
+B60 # Small Stars
+softbank_ne_jp.B16 # Purple Heart
+softbank_ne_jp.B0C # Pink Heart
+ezweb_ne_jp.03C # Four Leaf Clover
+
+
+B0C # Red Heart 
+softbank_ne_jp.B16 # Purple Heart
+#B0C # Red Heart 
+
+# Cupcake_2.jpg 20 x 26
+B68 # Big Star 
+B60 # Small Stars
+softbank_ne_jp.B0C # Pink Heart
+B68 # Big Star 
+softbank_ne_jp.B12 # Arrow Pierced Heart
+
+ 
 # Rose_1.gif 27 x 45 
 B60 # Small Stars
 B82 # 15x14 Key
@@ -246,7 +265,7 @@ softbank_ne_jp.B15 # Yellow Heart
 #B60 #Small Stars
 #softbank_ne_jp.B1B # Dark Club
 #softbank_ne_jp.B15 # Yellow Heart
-#ezweb_ne_jp.B13 # 15x14 Ligh Blue Heart
+#ezweb_ne_jp.B13 # 15x14 Light Blue Heart
 
 # Heart 
 #B60 #Small Stars
@@ -290,3 +309,32 @@ softbank_ne_jp.B15 # Yellow Heart
 #softbank_ne_jp.B16 # Purple Heart
 #ezweb_ne_jp.B17 # Heart With Bow
 
+# Cupcake_2.jpg 20 x 26
+B60 # Small Stars
+softbank_ne_jp.B0C # Pink Heart
+B68 # Big Star 
+softbank_ne_jp.B12 # Arrow Pierced Heart
+
+# Mickey.jpg 
+B60 # Small Stars
+softbank_ne_jp.B0C # Pink Heart
+B60 # Small Stars
+
+# Icecream_2.gif 28 46 
+B60 # Small Stars
+softbank_ne_jp.B0C # Pink Heart
+B60 # Small Stars
+B68 # Big Star
+B60 # Small Stars
+#B0C # Red Heart 
+B60 # Small Stars
+
+
+# Icecream_1.png 32 50 
+B60 # Small Stars
+softbank_ne_jp.B16 # Purple Heart
+softbank_ne_jp.B0C # Pink Heart
+B68 # Big Star
+B60 # Small Stars
+B60 # Small Stars
+B60 # Small Stars
