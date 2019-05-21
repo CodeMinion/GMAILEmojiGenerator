@@ -12,4 +12,4 @@ Usage: python EmojiGenerator.py ImagePath NumOfColumns NumOfRows Threshold(optio
 
 Instructions Video: https://www.youtube.com/watch?v=Y0kGzqKlZbo
 
-Creations: https://www.flickr.com/photos/codeminion/sets/72157648084003885/
+Creations: https://www.flickr.com/gp/codeminion/a533f3
